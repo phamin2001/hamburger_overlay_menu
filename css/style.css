@@ -1,0 +1,91 @@
+:root {
+  --prmary-color: rgba(13, 110, 139, 0.75);
+  --secondary-color: rgba(229, 148, 0, 0.9);
+  --overlay-color: rgba(24, 39, 51, 0.85);
+  --menu-speed: 0.75s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 3rem;
+}
+
+#showcase {
+  background: var(--prmary-color);
+  color: #fff;
+  /* Take up a whole page */
+  height: 100vh;
+  /* Adding position:relative as a parent of showcase-container, 
+  becuase we want to use sudo selector 'before' to add our 
+  overlay. Overlay has to set a postion: absolute which is 
+  is positioned relative to the nearest positioned ancestor.
+  If not we use a 'body' as the nearest position ancestor*/
+  position: relative;
+}
+
+#showcase:before {
+  /* Using 'before' or 'after' sudo selctor 
+  we need content value */
+  content: '';
+  background: url('../img/showcase.jpg') no-repeat center center/cover;
+  /* position:absolute is positioned relative to the nearest
+  positioned ancestor which is #showcase */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Span all the way across for width */
+  width: 100%;
+  /* Span all the way up and down */
+  height: 100%;
+  z-index: -1;
+}
+
+#showcase .showcase-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* By this point text is still not in the center of the
+  page becuase we didn't add a height to .showcase-container
+  | we added a height for parent (#showcase) to 100vh.
+  To fix it we need to set a height for 100% of .showcase-container's
+  parent height  */
+  height: 100%;
+}
+
+#showcase h1 {
+  font-size: 4rem;
+}
+
+#showcase p {
+  font-size: 1.3rem;
+}
+
+#showcase .btn {
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  background: var(--prmary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  transition: opacity 1s ease-in;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
