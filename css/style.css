@@ -1,5 +1,5 @@
 :root {
-  --prmary-color: rgba(13, 110, 139, 0.75);
+  --primary-color: rgba(13, 110, 139, 0.75);
   --secondary-color: rgba(229, 148, 0, 0.9);
   --overlay-color: rgba(24, 39, 51, 0.85);
   --menu-speed: 0.75s;
@@ -24,7 +24,7 @@ body {
 }
 
 #showcase {
-  background: var(--prmary-color);
+  background: var(--primary-color);
   color: #fff;
   /* Take up a whole page */
   height: 100vh;
@@ -79,7 +79,7 @@ body {
   display: inline-block;
   border: none;
   text-decoration: none;
-  background: var(--prmary-color);
+  background: var(--primary-color);
   color: #fff;
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
